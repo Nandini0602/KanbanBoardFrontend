@@ -1,0 +1,158 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitForm(taskForm)" #taskForm="ngForm">
+          <label for="task_title">Task Title:</label>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              ngModel
+              name="task_title"
+              #task_title="ngModel"
+              class="form-control"
+              id="task_title"
+              placeholder="Enter Task Title"
+              aria-label="task_title"
+              aria-describedby="basic-addon1"
+              required
+            />
+          </div>
+          <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['task_title'].valid &&
+              taskForm.controls['task_title']?.touched
+            "
+          >
+            Please Enter Valid Task Title
+          </div>
+          <label for="task_description">Task Description:</label>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              ngModel
+              name="task_description"
+              task_description="ngModel"
+              class="form-control"
+              id="task_description"
+              placeholder="Enter Task Description"
+              aria-label="taskid"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['task_description'].valid &&
+              taskForm.controls['task_description']?.touched
+            "
+          >
+            Please Enter Valid Task Description
+          </div>
+          <label for="assignee">Assignee:</label>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              ngModel
+              name="assignee"
+              assignee="ngModel"
+              class="form-control"
+              id="assignee"
+              placeholder="Enter Task Assignee"
+              aria-label="taskid"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['assignee'].valid &&
+              taskForm.controls['assignee']?.touched
+            "
+          >
+            Please Enter Valid Task Assignee
+          </div>
+          <label for="date">Deadline:</label>
+          <div class="input-group mb-3">
+            <input
+              type="date"
+              ngModel
+              name="deadline"
+              deadline="ngModel"
+              class="form-control"
+              id="deadline"
+              placeholder="Enter Deadline"
+              aria-label="taskid"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+          <div
+            class="text-muted"
+            *ngIf="
+              !taskForm.controls['deadline'].valid &&
+              taskForm.controls['deadline']?.touched
+            "
+          >
+            Please Enter Valid Task Deadline
+          </div>
+          <label for="priority">Priority:</label>
+          <div class="priority-dropdown">
+            <mat-form-field appearance="fill">
+              <mat-label>Set Priority</mat-label>
+              <select
+                matNativeControl
+                required
+                name="priority"
+                ngModel
+                #priority="ngModel"
+              >
+                <option
+                  *ngFor="let priority of priorities"
+                  value="{{ priority }}"
+                >
+                  {{ priority }}
+                </option>
+              </select>
+            </mat-form-field>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="ngSubmit"
+              class="btn btn-primary"
+              [disabled]="!taskForm.valid"
+              ngSubmit
+              
+            >
+              Save changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
