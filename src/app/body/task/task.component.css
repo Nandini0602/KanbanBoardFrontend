@@ -1,7 +1,7 @@
 .example-card {
   /* max-width: 400px; */
   /* text-align: left; */
-  width: 340px;;
+  width: 20rem;
   margin-right: 300;
   margin-left: 300;
 
@@ -14,8 +14,11 @@ mat-card-header{
 .todo-list{
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid black;
+  border-radius: 4%;
+  margin-bottom: 1.2rem;
+  width: 18rem;
 }
 .mat-card-footer{
   display: flex;
@@ -27,12 +30,14 @@ mat-card-header{
 /* } */
 
 .priority{
-  padding:8px;
-  background-color: red;
-  width: 5em;
-  height: 2.2em;
-  border-radius: 10%;
-  text-align: center;
+  padding: 6px;
+    background-color: #D62828;
+    width: 5em;
+    height: 2.2em;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
   /* justify-content: center;
   align-items: center; */
 
@@ -44,8 +49,7 @@ mat-icon:hover
 }
 
 .todo-section{
-  width: 400px;
+  width: 25rem;
 
 }
-
 
