@@ -1,8 +1,8 @@
 
 .completed-section{
-  width: 350px;
-  margin-right: 20px;
-  margin-left: 50px;
+  width: 400px;
+  margin-right: 15px;
+  margin-left: 15px;
 
 
 }
@@ -10,7 +10,8 @@
   /* max-width: 400px; */
   /* text-align: left; */
   border: 2px solid red;
-  width: 400;
+  width:300;
+  margin-right: 2em;
 
 }
 mat-card-header{
@@ -53,5 +54,3 @@ mat-icon:hover
   width: 400px;
 
 }
-
-
